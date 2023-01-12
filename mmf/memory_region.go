@@ -7,7 +7,7 @@ import (
 	"runtime"
 	"unsafe"
 
-	"github.com/nxgtw/go-ipc/internal/allocator"
+	"github.com/michalbiesek/go-ipc/internal/allocator"
 	"github.com/pkg/errors"
 )
 
@@ -28,10 +28,12 @@ var (
 // so the region will be unmapped during the gc.
 // Thus, you should be careful getting internal data.
 // For example, the following code may crash:
-// 	func f() {
-// 		region := NewMemoryRegion(...)
-// 		return g(region.Data())
-// 	}
+//
+//	func f() {
+//		region := NewMemoryRegion(...)
+//		return g(region.Data())
+//	}
+//
 // region may be gc'ed while its data is used by g().
 // To avoid this, you can use UseMemoryRegion() or region readers/writers.
 type MemoryRegion struct {
@@ -45,10 +47,11 @@ type Mappable interface {
 }
 
 // NewMemoryRegion creates a new shared memory region.
-// 	object - an object to mmap.
-// 	flag - open flags. see MEM_* constants.
-// 	offset - offset in bytes from the beginning of the mmaped file.
-// 	size - mapping size.
+//
+//	object - an object to mmap.
+//	flag - open flags. see MEM_* constants.
+//	offset - offset in bytes from the beginning of the mmaped file.
+//	size - mapping size.
 func NewMemoryRegion(object Mappable, flag int, offset int64, size int) (*MemoryRegion, error) {
 	impl, err := newMemoryRegion(object, flag, offset, size)
 	if err != nil {
@@ -87,10 +90,12 @@ func (region *MemoryRegion) Size() int {
 // region itself anymore. In this case the region can be gc'ed, the memory mapping
 // destroyed and you can get segfault.
 // It can be used like the following:
-// 	region := NewMemoryRegion(...)
+//
+//	region := NewMemoryRegion(...)
 //	defer UseMemoryRegion(region)
-// 	data := region.Data()
+//	data := region.Data()
 //	{ work with data }
+//
 // However, it is better to use MemoryRegionReader/Writer.
 // This function could be removed in future releases.
 func UseMemoryRegion(region *MemoryRegion) {

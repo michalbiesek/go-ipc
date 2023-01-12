@@ -7,7 +7,7 @@ import (
 	"time"
 	"unsafe"
 
-	"github.com/nxgtw/go-ipc/internal/common"
+	"github.com/michalbiesek/go-ipc/internal/common"
 )
 
 const (

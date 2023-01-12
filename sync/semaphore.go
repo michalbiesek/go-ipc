@@ -6,7 +6,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/nxgtw/go-ipc/internal/common"
+	"github.com/michalbiesek/go-ipc/internal/common"
 )
 
 const (
@@ -18,11 +18,13 @@ const (
 // Semaphore is a synchronization object with a resource counter,
 // which can be used to control access to a shared resource.
 // It provides access to actual OS semaphore primitive via:
+//
 //	CreateSemaprore on windows
 //	semget on unix
 type Semaphore semaphore
 
 // NewSemaphore creates new semaphore with the given name.
+//
 //	name - object name.
 //	flag - flag is a combination of open flags from 'os' package.
 //	perm - object's permission bits.

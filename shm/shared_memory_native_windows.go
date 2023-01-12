@@ -5,8 +5,8 @@ package shm
 import (
 	"os"
 
-	"github.com/nxgtw/go-ipc/internal/common"
-	"github.com/nxgtw/go-ipc/internal/sys/windows"
+	"github.com/michalbiesek/go-ipc/internal/common"
+	"github.com/michalbiesek/go-ipc/internal/sys/windows"
 
 	"github.com/pkg/errors"
 	"golang.org/x/sys/windows"
@@ -27,6 +27,7 @@ var (
 // Can be used to map shared memory regions into the process' address space.
 // It does not follow the usual memory object semantics, and it is destroyed only when all its handles are closed.
 // The following functions were added to satisfy SharedMemoryObject interface and return an error:
+//
 //	Truncate
 //	Destroy
 type WindowsNativeMemoryObject struct {
@@ -36,6 +37,7 @@ type WindowsNativeMemoryObject struct {
 }
 
 // NewWindowsNativeMemoryObject returns a new Windows native shared memory object.
+//
 //	name - object name.
 //	flag - combination of open flags from 'os' package along with O_COPY_ON_WRITE.
 //	size - mapping file size.

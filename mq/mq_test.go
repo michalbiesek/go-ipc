@@ -12,10 +12,10 @@ import (
 	"time"
 	"unsafe"
 
+	"github.com/michalbiesek/go-ipc/internal/allocator"
+	"github.com/michalbiesek/go-ipc/internal/common"
+	testutil "github.com/michalbiesek/go-ipc/internal/test"
 	ipc_sync "github.com/michalbiesek/go-ipc/sync"
-	"github.com/nxgtw/go-ipc/internal/allocator"
-	"github.com/nxgtw/go-ipc/internal/common"
-	testutil "github.com/nxgtw/go-ipc/internal/test"
 
 	"github.com/stretchr/testify/assert"
 )

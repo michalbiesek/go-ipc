@@ -9,7 +9,6 @@ import (
 	"strconv"
 
 	"github.com/michalbiesek/go-ipc/mmf"
-	"github.com/nxgtw/go-ipc/internal/test"
 )
 
 var (

@@ -1,5 +1,6 @@
 // Copyright 2015 Aleksandr Demakin. All rights reserved.
 
+//go:build darwin || freebsd
 // +build darwin freebsd
 
 package shm
@@ -10,7 +11,7 @@ import (
 	"syscall"
 	"unsafe"
 
-	"github.com/nxgtw/go-ipc/internal/allocator"
+	"github.com/michalbiesek/go-ipc/internal/allocator"
 
 	"golang.org/x/sys/unix"
 )

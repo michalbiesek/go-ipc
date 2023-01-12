@@ -6,8 +6,8 @@ import (
 	"os"
 	"testing"
 
+	"github.com/michalbiesek/go-ipc/internal/test"
 	"github.com/michalbiesek/go-ipc/mmf"
-	"github.com/nxgtw/go-ipc/internal/test"
 
 	"github.com/stretchr/testify/assert"
 )

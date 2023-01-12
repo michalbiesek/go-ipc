@@ -10,11 +10,11 @@ import (
 	"sync"
 	"unsafe"
 
+	"github.com/michalbiesek/go-ipc/internal/allocator"
+	testutil "github.com/michalbiesek/go-ipc/internal/test"
 	"github.com/michalbiesek/go-ipc/mmf"
 	"github.com/michalbiesek/go-ipc/shm"
 	ipc_sync "github.com/michalbiesek/go-ipc/sync"
-	"github.com/nxgtw/go-ipc/internal/allocator"
-	testutil "github.com/nxgtw/go-ipc/internal/test"
 )
 
 var (

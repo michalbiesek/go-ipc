@@ -1,5 +1,6 @@
 // Copyright 2015 Aleksandr Demakin. All rights reserved.
 
+//go:build darwin || freebsd || linux
 // +build darwin freebsd linux
 
 package mmf
@@ -9,7 +10,7 @@ import (
 	"syscall"
 	"unsafe"
 
-	"github.com/nxgtw/go-ipc/internal/allocator"
+	"github.com/michalbiesek/go-ipc/internal/allocator"
 
 	"github.com/pkg/errors"
 	"golang.org/x/sys/unix"

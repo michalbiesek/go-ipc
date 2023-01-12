@@ -7,7 +7,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/nxgtw/go-ipc/internal/common"
+	"github.com/michalbiesek/go-ipc/internal/common"
 
 	"github.com/pkg/errors"
 	"golang.org/x/sys/windows"
@@ -20,6 +20,7 @@ type NamedPipe struct {
 }
 
 // NewNamedPipe creates a new windows named pipe.
+//
 //	name - object name.
 //	flag - flag is a combination of open flags from 'os' package.
 //	perm - object's permission bits.

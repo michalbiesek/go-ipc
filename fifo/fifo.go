@@ -6,8 +6,8 @@ import (
 	"io"
 	"os"
 
-	//"github.com/nxgtw/go-ipc/internal/common"
-    "github.com/nxgtw/go-ipc/internal/common"
+	//"github.com/michalbiesek/go-ipc/internal/common"
+	"github.com/michalbiesek/go-ipc/internal/common"
 )
 
 const (
@@ -23,6 +23,7 @@ type Fifo interface {
 }
 
 // New creates or opens a new FIFO object
+//
 //	name - object name.
 //	flag - flag is a combination of open flags from 'os' package along with O_NONBLOCK flag.
 //	perm - object's permission bits.

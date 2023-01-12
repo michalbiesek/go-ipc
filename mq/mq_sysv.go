@@ -1,5 +1,6 @@
 // Copyright 2016 Aleksandr Demakin. All rights reserved.
 
+//go:build darwin || freebsd || linux
 // +build darwin freebsd linux
 
 package mq
@@ -8,7 +9,7 @@ import (
 	"os"
 	"unsafe"
 
-	"github.com/nxgtw/go-ipc/internal/common"
+	"github.com/michalbiesek/go-ipc/internal/common"
 
 	"github.com/pkg/errors"
 )
@@ -38,6 +39,7 @@ var (
 )
 
 // CreateSystemVMessageQueue creates new queue with the given name and permissions.
+//
 //	name - unique mq name.
 //	flag - flag is a combination of os.O_EXCL and O_NONBLOCK.
 //	perm - object's permission bits.
@@ -61,6 +63,7 @@ func CreateSystemVMessageQueue(name string, flag int, perm os.FileMode) (*System
 }
 
 // OpenSystemVMessageQueue opens existing message queue.
+//
 //	name - unique mq name.
 //	flag - 0 and O_NONBLOCK.
 func OpenSystemVMessageQueue(name string, flags int) (*SystemVMessageQueue, error) {

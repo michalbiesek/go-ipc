@@ -7,7 +7,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/nxgtw/go-ipc/internal/common"
+	"github.com/michalbiesek/go-ipc/internal/common"
 )
 
 const (
@@ -65,6 +65,7 @@ type PriorityMessenger interface {
 // New creates a mq with a given name and permissions.
 // It uses the default implementation. If there are several implementations on a platform,
 // you can use explicit create functions.
+//
 //	name - unique queue name.
 //	flag - create flags. You can specify:
 //		os.O_EXCL if you don't want to open a queue if it exists.
@@ -79,6 +80,7 @@ func New(name string, flag int, perm os.FileMode) (Messenger, error) {
 // Open opens a mq with a given name and flags.
 // It uses the default implementation. If there are several implementations on a platform,
 // you can use explicit create functions.
+//
 //	name  - unique queue name.
 //	flags - 0 or O_NONBLOCK.
 func Open(name string, flags int) (Messenger, error) {

@@ -7,11 +7,11 @@ import (
 	"runtime"
 	"time"
 
+	"github.com/michalbiesek/go-ipc/internal/common"
+	"github.com/michalbiesek/go-ipc/internal/helper"
 	"github.com/michalbiesek/go-ipc/mmf"
 	"github.com/michalbiesek/go-ipc/shm"
 	ipc_sync "github.com/michalbiesek/go-ipc/sync"
-	"github.com/nxgtw/go-ipc/internal/common"
-	"github.com/nxgtw/go-ipc/internal/helper"
 
 	"github.com/pkg/errors"
 )

@@ -8,7 +8,7 @@ import (
 	"time"
 	"unsafe"
 
-	"github.com/nxgtw/go-ipc/internal/common"
+	"github.com/michalbiesek/go-ipc/internal/common"
 )
 
 const (
@@ -19,6 +19,7 @@ const (
 // it tries to minimize amount of syscalls.
 // actual wait/wake must be implemented by a waitWaker object.
 // state is a shared variable, that contains event state:
+//
 //	the highest bit is a signal bit
 //	all other bits define the number of waiters.
 type lwEvent struct {

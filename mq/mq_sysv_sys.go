@@ -1,5 +1,6 @@
 // Copyright 2016 Aleksandr Demakin. All rights reserved.
 
+//go:build (linux && amd64) || darwin || freebsd
 // +build linux,amd64 darwin freebsd
 
 package mq
@@ -9,8 +10,8 @@ import (
 	"syscall"
 	"unsafe"
 
-	"github.com/nxgtw/go-ipc/internal/allocator"
-	"github.com/nxgtw/go-ipc/internal/common"
+	"github.com/michalbiesek/go-ipc/internal/allocator"
+	"github.com/michalbiesek/go-ipc/internal/common"
 
 	"golang.org/x/sys/unix"
 )

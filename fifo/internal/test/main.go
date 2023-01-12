@@ -10,7 +10,6 @@ import (
 	"time"
 
 	"github.com/michalbiesek/go-ipc/fifo"
-	"github.com/nxgtw/go-ipc/internal/test"
 )
 
 var (

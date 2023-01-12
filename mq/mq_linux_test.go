@@ -1,5 +1,6 @@
 // Copyright 2015 Aleksandr Demakin. All rights reserved.
 
+//go:build linux
 // +build linux
 
 package mq
@@ -9,7 +10,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/nxgtw/go-ipc/internal/test"
+	"github.com/michalbiesek/go-ipc/internal/test"
 	"github.com/stretchr/testify/assert"
 )
 

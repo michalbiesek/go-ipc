@@ -1,5 +1,6 @@
 // Copyright 2015 Aleksandr Demakin. All rights reserved.
 
+//go:build darwin || freebsd || linux
 // +build darwin freebsd linux
 
 package fifo
@@ -7,7 +8,7 @@ package fifo
 import (
 	"os"
 
-	"github.com/nxgtw/go-ipc/internal/common"
+	"github.com/michalbiesek/go-ipc/internal/common"
 
 	"github.com/pkg/errors"
 	"golang.org/x/sys/unix"
@@ -19,6 +20,7 @@ type UnixFifo struct {
 }
 
 // NewUnixFifo creates a new unix FIFO.
+//
 //	name - object name.
 //	flag - flag is a combination of open flags from 'os' package.
 //	perm = object permissions.

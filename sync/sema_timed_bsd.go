@@ -1,5 +1,6 @@
 // Copyright 2016 Aleksandr Demakin. All rights reserved.
 
+//go:build darwin || freebsd
 // +build darwin freebsd
 
 package sync
@@ -11,7 +12,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/nxgtw/go-ipc/internal/common"
+	"github.com/michalbiesek/go-ipc/internal/common"
 
 	"github.com/pkg/errors"
 	"golang.org/x/sys/unix"
