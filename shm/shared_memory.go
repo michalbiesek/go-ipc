@@ -6,8 +6,8 @@ import (
 	"os"
 	"runtime"
 
+	"github.com/michalbiesek/go-ipc/mmf"
 	"github.com/nxgtw/go-ipc/internal/common"
-	"bitbucket.org/avd/go-ipc/mmf"
 	"github.com/pkg/errors"
 )
 
@@ -32,6 +32,7 @@ type MemoryObject struct {
 }
 
 // NewMemoryObject creates a new shared memory object.
+//
 //	name - a name of the object. should not contain '/' and exceed 255 symbols (30 on darwin).
 //	size - object size.
 //	flag - flag is a combination of open flags from 'os' package.

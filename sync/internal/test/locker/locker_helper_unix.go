@@ -1,5 +1,6 @@
 // Copyright 2016 Aleksandr Demakin. All rights reserved.
 
+//go:build linux || freebsd || darwin
 // +build linux freebsd darwin
 
 package main
@@ -8,7 +9,7 @@ import (
 	"fmt"
 	"sync"
 
-	ipc_sync "bitbucket.org/avd/go-ipc/sync"
+	ipc_sync "github.com/michalbiesek/go-ipc/sync"
 )
 
 func createLocker(typ, name string, flag int) (locker sync.Locker, err error) {

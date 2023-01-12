@@ -5,15 +5,15 @@ package helper
 import (
 	"os"
 
-	"bitbucket.org/avd/go-ipc/mmf"
-	"bitbucket.org/avd/go-ipc/shm"
+	"github.com/michalbiesek/go-ipc/mmf"
+	"github.com/michalbiesek/go-ipc/shm"
 	"github.com/pkg/errors"
 )
 
 // CreateWritableRegion is a helper, which:
-//	- creates a shared memory object with given parameters.
-//	- creates a mapping for the entire region with mmf.MEM_READWRITE flag.
-//	- closes memory object and returns memory region and a flag whether the object was created.
+//   - creates a shared memory object with given parameters.
+//   - creates a mapping for the entire region with mmf.MEM_READWRITE flag.
+//   - closes memory object and returns memory region and a flag whether the object was created.
 func CreateWritableRegion(name string, flag int, perm os.FileMode, size int) (*mmf.MemoryRegion, bool, error) {
 	obj, created, resultErr := shm.NewMemoryObjectSize(name, flag, perm, int64(size))
 	if resultErr != nil {

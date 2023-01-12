@@ -1,5 +1,6 @@
 // Copyright 2016 Aleksandr Demakin. All rights reserved.
 
+//go:build linux || freebsd
 // +build linux freebsd
 
 package sync
@@ -8,10 +9,10 @@ import (
 	"os"
 	"time"
 
+	"github.com/michalbiesek/go-ipc/mmf"
+	"github.com/michalbiesek/go-ipc/shm"
 	"github.com/nxgtw/go-ipc/internal/allocator"
 	"github.com/nxgtw/go-ipc/internal/helper"
-	"bitbucket.org/avd/go-ipc/mmf"
-	"bitbucket.org/avd/go-ipc/shm"
 
 	"github.com/pkg/errors"
 )
@@ -31,6 +32,7 @@ type FutexMutex struct {
 // NewFutexMutex creates a new futex-based mutex.
 // This implementation is based on a paper 'Futexes Are Tricky' by Ulrich Drepper,
 // this document can be found in 'docs' folder.
+//
 //	name - object name.
 //	flag - flag is a combination of open flags from 'os' package.
 //	perm - object's permission bits.

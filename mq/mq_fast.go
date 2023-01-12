@@ -7,11 +7,11 @@ import (
 	"runtime"
 	"time"
 
+	"github.com/michalbiesek/go-ipc/mmf"
+	"github.com/michalbiesek/go-ipc/shm"
+	ipc_sync "github.com/michalbiesek/go-ipc/sync"
 	"github.com/nxgtw/go-ipc/internal/common"
 	"github.com/nxgtw/go-ipc/internal/helper"
-	"bitbucket.org/avd/go-ipc/mmf"
-	"bitbucket.org/avd/go-ipc/shm"
-	ipc_sync "bitbucket.org/avd/go-ipc/sync"
 
 	"github.com/pkg/errors"
 )
@@ -100,6 +100,7 @@ func openFastMq(name string, flag int, perm os.FileMode, maxQueueSize, maxMsgSiz
 }
 
 // CreateFastMq creates new FastMq.
+//
 //	name - mq name. implementation will create a shm object with this name.
 //	flag - flag is a combination of os.O_EXCL, and O_NONBLOCK.
 //	perm - object's permission bits.
@@ -110,6 +111,7 @@ func CreateFastMq(name string, flag int, perm os.FileMode, maxQueueSize, maxMsgS
 }
 
 // OpenFastMq opens an existing message queue. It returns an error, if it does not exist.
+//
 //	name - unique mq name.
 //	flag - 0 or O_NONBLOCK.
 func OpenFastMq(name string, flag int) (*FastMq, error) {

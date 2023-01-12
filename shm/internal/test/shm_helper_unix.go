@@ -1,5 +1,6 @@
 // Copyright 2016 Aleksandr Demakin. All rights reserved.
 
+//go:build linux || darwin || freebsd
 // +build linux darwin freebsd
 
 package main
@@ -8,7 +9,7 @@ import (
 	"fmt"
 	"os"
 
-	"bitbucket.org/avd/go-ipc/shm"
+	"github.com/michalbiesek/go-ipc/shm"
 )
 
 func newShmObject(name string, mode int, perm os.FileMode, typ string, size int) (*shm.MemoryObject, error) {

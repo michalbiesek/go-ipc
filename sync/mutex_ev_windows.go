@@ -6,11 +6,11 @@ import (
 	"os"
 	"time"
 
+	"github.com/michalbiesek/go-ipc/mmf"
+	"github.com/michalbiesek/go-ipc/shm"
 	"github.com/nxgtw/go-ipc/internal/allocator"
 	"github.com/nxgtw/go-ipc/internal/common"
 	"github.com/nxgtw/go-ipc/internal/helper"
-	"bitbucket.org/avd/go-ipc/mmf"
-	"bitbucket.org/avd/go-ipc/shm"
 
 	"github.com/pkg/errors"
 	"golang.org/x/sys/windows"
@@ -34,6 +34,7 @@ type EventMutex struct {
 }
 
 // NewEventMutex creates a new event-basedmutex.
+//
 //	name - object name.
 //	flag - flag is a combination of open flags from 'os' package.
 //	perm - object's permission bits.

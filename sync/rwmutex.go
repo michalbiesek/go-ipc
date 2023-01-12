@@ -5,10 +5,10 @@ package sync
 import (
 	"os"
 
+	"github.com/michalbiesek/go-ipc/mmf"
+	"github.com/michalbiesek/go-ipc/shm"
 	"github.com/nxgtw/go-ipc/internal/allocator"
 	"github.com/nxgtw/go-ipc/internal/helper"
-	"bitbucket.org/avd/go-ipc/mmf"
-	"bitbucket.org/avd/go-ipc/shm"
 
 	"github.com/pkg/errors"
 )
@@ -27,6 +27,7 @@ type RWMutex struct {
 }
 
 // NewRWMutex returns new RWMutex
+//
 //	name - object name.
 //	flag - flag is a combination of open flags from 'os' package.
 //	perm - object's permission bits.

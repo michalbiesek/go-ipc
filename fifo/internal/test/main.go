@@ -9,7 +9,7 @@ import (
 	"strconv"
 	"time"
 
-	"bitbucket.org/avd/go-ipc/fifo"
+	"github.com/michalbiesek/go-ipc/fifo"
 	"github.com/nxgtw/go-ipc/internal/test"
 )
 

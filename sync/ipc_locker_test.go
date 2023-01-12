@@ -11,11 +11,11 @@ import (
 	"testing"
 	"time"
 
+	"github.com/michalbiesek/go-ipc/mmf"
+	"github.com/michalbiesek/go-ipc/shm"
 	"github.com/nxgtw/go-ipc/internal/allocator"
 	"github.com/nxgtw/go-ipc/internal/common"
 	"github.com/nxgtw/go-ipc/internal/test"
-	"bitbucket.org/avd/go-ipc/mmf"
-	"bitbucket.org/avd/go-ipc/shm"
 
 	"github.com/stretchr/testify/assert"
 )

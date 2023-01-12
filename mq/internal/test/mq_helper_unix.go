@@ -1,5 +1,6 @@
 // Copyright 2016 Aleksandr Demakin. All rights reserved.
 
+//go:build darwin || freebsd
 // +build darwin freebsd
 
 package main
@@ -8,7 +9,7 @@ import (
 	"fmt"
 	"os"
 
-	"bitbucket.org/avd/go-ipc/mq"
+	"github.com/michalbiesek/go-ipc/mq"
 )
 
 func createMqWithType(name string, perm os.FileMode, typ, opt string) (mq.Messenger, error) {

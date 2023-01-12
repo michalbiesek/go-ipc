@@ -1,5 +1,6 @@
 // Copyright 2016 Aleksandr Demakin. All rights reserved.
 
+//go:build freebsd || linux
 // +build freebsd linux
 
 package sync
@@ -8,10 +9,10 @@ import (
 	"os"
 	"time"
 
+	"github.com/michalbiesek/go-ipc/mmf"
+	"github.com/michalbiesek/go-ipc/shm"
 	"github.com/nxgtw/go-ipc/internal/allocator"
 	"github.com/nxgtw/go-ipc/internal/helper"
-	"bitbucket.org/avd/go-ipc/mmf"
-	"bitbucket.org/avd/go-ipc/shm"
 	"github.com/pkg/errors"
 )
 
