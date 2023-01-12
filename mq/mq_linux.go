@@ -51,6 +51,7 @@ type linuxMqAttr struct {
 }
 
 // CreateLinuxMessageQueue creates new queue with the given name and permissions.
+//
 //	name - unique mq name.
 //	flag - flag is a combination of os.O_EXCL and O_NONBLOCK.
 //	perm - object's permission bits.
@@ -79,6 +80,7 @@ func CreateLinuxMessageQueue(name string, flag int, perm os.FileMode, maxQueueSi
 }
 
 // OpenLinuxMessageQueue opens an existing message queue. It returns an error, if it does not exist.
+//
 //	name - unique mq name.
 //	flag - flag is a combination of (os.O_RDONLY or os.O_WRONLY or os.O_RDWR) and O_NONBLOCK.
 //		O_RDONLY
@@ -230,6 +232,15 @@ func (mq *LinuxMessageQueue) Cap() int {
 		return 0
 	}
 	return attrs.Maxmsg
+}
+
+// Size returns the current size of the mq buffer.
+func (mq *LinuxMessageQueue) Size() int {
+	attrs, err := mq.getAttrs()
+	if err != nil {
+		return 0
+	}
+	return attrs.Curmsgs
 }
 
 // SetBlocking sets whether the send/receive operations on the queue block.
